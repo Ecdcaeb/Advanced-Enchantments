@@ -1,5 +1,6 @@
 package com.hexagram2021.advanced_enchantments.utils;
 
+import net.minecraftforge.fml.common.FMLLog;
 import org.objectweb.asm.tree.AbstractInsnNode;
 import org.objectweb.asm.tree.InsnList;
 
@@ -18,7 +19,7 @@ import java.util.ListIterator;
  **/
 public class AEASMUtil {
     public static File gameDir;
-    public static final boolean saveTransformedClass=true;
+    public static final boolean saveTransformedClass= FMLLog.log.isDebugEnabled();
     public static byte[] push(String rawName,byte[] clazz){
         if (saveTransformedClass){
             final File outRoot=new File(gameDir,"clazzs/");
